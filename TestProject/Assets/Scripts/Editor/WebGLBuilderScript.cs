@@ -1,6 +1,6 @@
 using UnityEditor;
 
-public class BuildScript 
+public class WebGLBuilderScript 
 {
      [MenuItem("Custom Utilities/Build StandaloneLinux64")]
     static void PerformBuild()
