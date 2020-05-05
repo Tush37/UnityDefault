@@ -19,12 +19,21 @@ public class WebGLBuilderScript
     
     
     [MenuItem("Custom Utilities/Build WebGL")]
-    static void PerformBuildWebgl()
+    public static void PerformBuildWebgl()
     {
-        string[] defaultScene = { "Assets/Scenes/SampleScene.unity" }; 
-        string pathToDeploy = "./builds/WebGLversionNew/";       
+        
+        string pathToDeploy = "./builds/WebGLversionNew/";    
+         var sceneSettings = EditorBuildSettings.scenes;
+		string[] scenePaths = new string[sceneSettings.Length];
 
-        BuildPipeline.BuildPlayer(defaultScene, pathToDeploy, BuildTarget.WebGL, BuildOptions.None);
+		for (int i = 0; i < scenePaths.Length; ++i)
+		{
+			scenePaths[i] = sceneSettings[i].path;
+		}
+         
+         
+
+        BuildPipeline.BuildPlayer(scenePaths, pathToDeploy, BuildTarget.WebGL, BuildOptions.None);
         
     }
     
