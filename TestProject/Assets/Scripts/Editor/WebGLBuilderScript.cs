@@ -21,7 +21,7 @@ public class BuildScript
     [MenuItem("Custom Utilities/Build WebGL")]
     static void PerformBuildWebgl()
     {
-        string[] defaultScene = { "Assets/Scenes/MainScene.unity" }; 
+        string[] defaultScene = { "Assets/Scenes/SampleScene.unity" }; 
         string pathToDeploy = "builds/WebGLversionNew/";       
 
         BuildPipeline.BuildPlayer(defaultScene, pathToDeploy, BuildTarget.WebGL, BuildOptions.None);
