@@ -19,10 +19,10 @@ public class WebGLBuilderScript
     
     
     [MenuItem("Custom Utilities/Build WebGL")]
-    public static void PerformBuildWebgl()
+    static void PerformBuildWebgl()
     {
         
-        string pathToDeploy = "./builds/WebGLversionNew/";    
+        string pathToDeploy = "builds/WebGLversionNew/";    
          var sceneSettings = EditorBuildSettings.scenes;
 		string[] scenePaths = new string[sceneSettings.Length];
 
@@ -30,8 +30,6 @@ public class WebGLBuilderScript
 		{
 			scenePaths[i] = sceneSettings[i].path;
 		}
-         
-         
 
         BuildPipeline.BuildPlayer(scenePaths, pathToDeploy, BuildTarget.WebGL, BuildOptions.None);
         
